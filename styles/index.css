@@ -3,85 +3,82 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
+body,html{
+    width: 100%;
+    height: 100vh;
     font-family: 'Arial' , sans-serif;
 }
 nav{
-    background-color: rgb(189, 19, 19);
-    color: white;
+    width: 100%;
+    height: 80px;
+    background-color: aqua;
+    color: blue;
     display: flex;
     justify-content: space-between;
 }
-nav .mainMenu{
-    display: flex;
-    list-style: none;
+label.logo{
+    line-height: 80px;
+    font-size: 35px;
+    margin: 0 100px;
+    color:blue;
 }
-nav .mainMenu li a{
+nav ul{
+    float: right;
+    list-style-type: none;
+}
+nav  ul li{
     display: inline-block;
-    padding: 15px;
+    line-height: 80px;
+}
+nav ul li a{
+    display: inline-block;
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
-    font-size: 1rem;
-    
+    color: blue;
+    font-size: 20px;  
+    padding: 0px 20px; 
 }
-nav .mainMenu li a:hover{
+nav ul li a.active, a:hover{
     background-color: orange;
 }
-nav .openmenu{
-    font-size: 2rem;
-    margin: 20px;
+#checkbtn{
+    float: right;
+    line-height: 80px;
+    margin-right: 10px;
+    font-size: 30px;
     display: none;
-    cursor: pointer;
 }
-nav .mainMenu .closemenu , .icons i{
-    font-size: 2rem;
+#check{
     display: none;
-    cursor: pointer;
 }
-.fa-facebook:hover{color: yellowgreen;}
-.fa-instagram:hover{color: yellowgreen;}
-.fa-twitter:hover{color: yellowgreen;}
-.fa-github:hover{color: yellowgreen;}
-nav .logo{
-    margin: 6px;
-    font-size: 25px;
-    cursor: pointer;
+#check:checked ~ ul{
+    left: 0;
 }
 
-@media(max-width:800px){
-    nav .mainMenu{
+
+@media(max-width:895px){
+    #checkbtn{
+        display: block;
+    }
+    nav ul{
+        width: 100%;
         height: 100vh;
         position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 10;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background: black;
-        transition: top 1se ease;
-        display: none;
+        top: 80px;
+        left: -100%;
+       
     }
-    nav .mainMenu .closemenu{
+
+    nav ul li{
         display: block;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-    }
-    nav .openmenu{
-        display: block;
+        text-align: center;
+       
+       
     }
     nav .mainMenu li a:hover{
         background: none;
         color: yellow;
         font-size: 1.6rem;
-    }
-    .icons i{
-        display: inline-block;
-        padding: 12px;
-
     }
     
 }
